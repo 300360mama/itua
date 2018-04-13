@@ -1,0 +1,54 @@
+/*  CSS  */
+
+/* <div class="header">
+	<ul class="menu">
+		<li><a href="#" title="">Меню 1</a>
+		<li><a href="#" title="">Меню 2</a>
+		<li><a href="#" title="">Меню 3</a>
+		<li><a href="#" title="">Меню 4</a>
+	</ul>
+	<form action="" method="post">
+		<input type="text" name="NAME" value="" />
+		<input type="text" name="EMAIL" value="" />
+		<input type="text" name="PHONE" value="" />
+		<input type="submit" name="save" value="Сохранить" />
+	</form>
+</div> */
+
+
+
+ /* QUESTION: 1,2
+ Убрать с помощью CSS у маркированного списка все маркеры.
+ Установить у всех li внешние отступы 5пх, внутренние отступы 3пх.*/
+.header .menu li{
+    list-style: none;
+    margin:5px;
+    padding: 3px;
+}
+
+/* QUESTION: 3
+Установить границу всем текстовым элементам формы в 1пх красным цветом.
+*/
+.header form input[type='text']{
+    border:1px solid red;
+}
+/*
+.header form .text{
+    border:1px solid green;
+}
+*/
+
+/* QUESTION: 4
+Первый элемент списка выделить зелёным цветом.
+*/
+.header .menu li:first-of-type a{
+    color: green;
+}
+
+/* QUESTION: 5
+Сделать цвет текста синим в каждой второй ссылке списка.
+*/
+
+.header .menu li:nth-child(even) a{
+    color: red;
+}

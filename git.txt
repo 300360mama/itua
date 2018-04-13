@@ -1,0 +1,40 @@
+Git
+Предположим, что консоль уже открыта и Вы находитесь в папке d:\repos. В папке d:\repos уже есть 3 файла:
+.gitignore - (пустой)
+.htaccess
+index.php
+
+
+Вопрос 1
+Инициализировать новый репозиторий на локальной машине;
+
+
+git init
+
+
+Вопрос 2
+Закомитить файлы index.php и .gitignore;
+
+
+git add index.php .htaccess
+git add .gitignore
+git commit -m 'first commit'
+
+Вопрос 3
+Подключить удаленный репозиторий http://domain.com/repo.git;
+
+
+git remote add myrepo http://domain.com/repo.git
+
+Вопрос 4
+Создать ветку develop;
+
+git branch develop
+or
+git checkout -b develop
+
+Вопрос 5
+Залить последние изменения в удаленный репозиторий.
+
+
+git push myrepo develop

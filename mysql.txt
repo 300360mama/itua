@@ -1,0 +1,35 @@
+MySQL
+
+Вопрос 1
+Создать таблицу с категориями разделов интернет-магазина. Необходимые поля:
+ID, NAME, PARENT_ID. Указать primary key ID.
+
+
+1. "CREATE DATABASE itua";
+2. "USE itua;"
+3. "CREATE TABLE categories(id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL, name varchar(60) NOT NULL, parent_id INT(11) NOT NUll);"
+
+
+Вопрос 2
+Вставить 4 раздела в созданную таблицу. 1 корневой и 2 дочерних раздела. Дочерние привязываются к родительским.
+
+1. "INSERT INTO categories('name', 'parent_id') VALUES('parent', 0);"
+2. "INSERT INTO categories('name', 'parent_id') VALUES('sub1', (SELECT * FROM (SELECT id FROM categories WHERE parent_id=0 LIMIT 1) as t)),
+                                                      ('sub2', (SELECT * FROM (SELECT id FROM categories WHERE parent_id=0 LIMIT 1) as t)),
+                                                      ('sub3', (SELECT * FROM (SELECT id FROM categories WHERE parent_id=0 LIMIT 1) as t));"
+
+Вопрос 3
+Написать SQL запрос для выборки только дочерних разделов.
+
+"SELECT * FROM categories WHERE parent_id!=0;"
+
+Вопрос 4
+Обновить название (NAME) у родительского раздела.
+
+"UPDATE `categories` SET name=`new parent` WHERE name=`parent`;"
+
+Вопрос 5
+Удалить все дочерние разделы созданного родительского раздела (п.1) из таблицы.
+
+
+"DELETE FROM categories WHERE parent_id=(SELECT * FROM (SELECT id FROM categories WHERE parent_id=0 AND name='parent') as t); "
