@@ -50,5 +50,5 @@
 */
 
 .header .menu li:nth-child(even) a{
-    color: red;
+    color: blue;
 }
